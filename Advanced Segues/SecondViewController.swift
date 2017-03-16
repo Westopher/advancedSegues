@@ -9,6 +9,8 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    var username = "west"
 
     override func viewDidLoad() {
         super.viewDidLoad()
