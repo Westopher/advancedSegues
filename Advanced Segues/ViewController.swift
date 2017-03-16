@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var activeRow = 0
+    
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 4
@@ -27,6 +29,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        activeRow = indexPath.row
+        
+        performSegue(withIdentifier: "toSecondViewController", sender: nil)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,7 +50,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             let secondViewController = segue.destination as! SecondViewController
             
-            secondViewController.username = "sky"
+            secondViewController.activeRow = activeRow
+            
+            
             
         }
     }

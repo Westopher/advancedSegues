@@ -11,6 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
     
     var username = "west"
+    var activeRow = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
